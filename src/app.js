@@ -1,16 +1,18 @@
 /* @jsx createElement */
-import { createElement, render } from './react.js'
+import { createElement, render, Component } from './react.js'
 
-function Title(props) {
-  return <h1>{props.children}</h1>
+class Title extends Component {
+  render() {
+    return <h1>{this.props.children}</h1>
+  }
 }
 
 function Item(props) {
   return <li style={`color: ${props.color}`}>{props.children}</li>
 }
-const vdom = /* html */
+const App = () => /* html */
   <p>
-    <Title label="React">React 정말 잘 만들기</Title>
+    <Title label="React">React 정말 클래스 컴포넌트 잘 만들기</Title>
     <ul>
       <Item color="red">첫 번째 아이템</Item>
       <Item color="green">두 번째 아이템</Item>
@@ -18,4 +20,4 @@ const vdom = /* html */
     </ul>
   </p>
 
-render(vdom, document.querySelector('#root'))
+render(<App />, document.querySelector('#root'))
