@@ -46,3 +46,13 @@ export function createElement(tag, props, ...children) {
 export function render(vdom, container) {
   container.appendChild(createDom(vdom))
 }
+
+export const render = function () {
+  let prevDom = null
+  return function (vdom, container) {
+    if (prevDom === null) {
+      prevDom = vdom
+    }
+    container.appendChild(createDom(vdom))
+  }
+}
