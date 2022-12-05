@@ -62,3 +62,6 @@ React.createElement("p", null, /*#__PURE__*/React.createElement("h1", null, "Rea
 여기서 보면 `React.createElement` 함수의 인자로 태그, props, children을 받는 것을 볼 수 있다.
 
 js 코드 상단에 `/* @jsx createElement */` 라고 입력을 해 주면 기존에 `React.createElement` 였던 것이 앞에 `React.`는 사라진 것을 볼 수 있다. 
+
+## 함수 컴포넌트
+jsx 문법의 태그에 이름이 대문자로 시작되면 문자열로 취급하지 않고 자바스크립트 값으로 취급한다. 그 값은 무조건 함수여야 한다.
